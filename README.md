@@ -4,9 +4,13 @@ A minimal FastAPI proxy that rotates through a pool of API keys to bypass rate l
 
 ## Installation
 
+Run the install script or install manually:
 ```bash
-git clone <repo-url>
-cd api-key-stacker
+# Automatic
+./install.sh  # Linux/Mac/Git-Bash
+install.bat   # Windows CMD
+
+# Manual
 pip install -r requirements.txt
 ```
 

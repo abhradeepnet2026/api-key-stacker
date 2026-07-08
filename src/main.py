@@ -1,10 +1,13 @@
 from fastapi import FastAPI, Request, HTTPException, Depends
 from fastapi.responses import StreamingResponse
 import httpx
-from src.config import MASTER_KEY, PROVIDER_CONFIG
+from src.config import MASTER_KEY
 from src.key_pool import get_pool
 
 app = FastAPI()
+
+# ponytail: global client for connection persistence
+client = httpx.AsyncClient(timeout=120.0)
 
 # ponytail: global client for connection pooling (huge perf gain)
 client = httpx.AsyncClient(timeout=httpx.Timeout(60.0))
